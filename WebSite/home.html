@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="author" content="Lukas Brun">
+    <meta charset="utf-8">
+    <link href="css/VreniStyleSheet.css" rel="stylesheet" />
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <!--<script type="application/javascript">
+        function draw() {
+          var canvas = document.getElementById("canvas");
+          if(canvas.getContext){
+            var ctx = canvas.getContext("2d");
+
+            ctx.fillStyle = "rgb(200,0,0)";
+            ctx.fillRect(10, 10, 55, 50);
+
+            ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+            ctx.fillRect(30, 30, 55, 50);
+          }
+        }
+    </script>-->
+    <script>
+        function getSummary(id)
+        {
+           $.ajax({
+
+             type: "GET",
+             url: 'Your URL',
+             data: "id=" + id, // appears as $_GET['id'] @ your backend side
+             success: function(data) {
+                   // data is ur summary
+                  $('#mainContent').html(data);
+             }
+
+           });
+
+        }
+    </script>
+</head>
+<body>
+    <!-- onload="draw();" -->
+    <div>
+        <header>
+            <img src="pictures\banner.jpg" class="banner" />
+        </header>
+        <ul>
+            <li><a href="default.asp">Home</a></li>
+            <li><a href="news.asp">Canvas</a></li>
+            <li><a href="contact.asp">Form</a></li>
+        </ul>
+
+        <div id="mainContent">
+
+        </div>
+    </div>
+</body>
+</html>
