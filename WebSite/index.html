@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>WebTecPage</title>
+    <meta name="author" content="Lukas Brun">
+    <meta charset="utf-8">
+    <link href="Css/main.css" rel="stylesheet" />
+    <link href="Css/spaceStyle.css" rel="stylesheet" id="style" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="Scripts/script.js"></script>
+    <script src="Scripts/canvas.js"></script>
+</head>
+<body onload="getStyle()">
+    <div class="mainDiv">
+        <header>
+            <img class="banner" id="banner"/>
+        </header>
+        <ul>
+            <li id="home" class="clickable">Home</li>
+            <li id="canvas" class="clickable">Canvas</li>
+            <li id="form" class="clickable">Form</li>
+        </ul>
+        <div class="mainContent" id="mainContent"></div>
+        <footer class="footer">
+                <label id="designLabel">Designs:</label>
+                <img src="Images\astronautIcon.png" class="styleIcon" onclick="changeStyle('spaceStyle')" />
+                <img src="Images\waterIcon.png" class="styleIcon" onclick="changeStyle('earthStyle')" />
+            <p>Copyright &copy; 2017 All rights reserved</p>
+        </footer>
+    </div>
+</body>
+</html>

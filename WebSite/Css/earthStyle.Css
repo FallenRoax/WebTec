@@ -1,0 +1,7 @@
+body {
+    background-image: url("../Images/backgroundBlue.jpg");
+}
+
+.banner {
+    content: url("../Images/bannerEarth.png");
+}

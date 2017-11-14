@@ -1,0 +1,7 @@
+body {
+    background-image: url("../Images/backgroundDark.jpg");
+}
+
+.banner {
+    content: url("../Images/bannerSpace.png");
+}
