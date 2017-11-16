@@ -9,6 +9,18 @@ body {
     height: 100%;
 }
 
+.mainDiv {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.banner {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-decoration: none;
+}
+
 ul {
     list-style-type: none;
     overflow: hidden;
@@ -16,6 +28,7 @@ ul {
 }
 
 li {
+    font-size: 26px;
     display: inline;
     float: left;
     padding: 8px 16px;
@@ -30,14 +43,6 @@ li {
     cursor: pointer;
 }
 
-#designLabel {
-    text-decoration: none;
-    color: white;
-    display: inline-block;
-    padding: 8px;
-}
-
-/* Change the link color on hover */
 li:hover {
     background-color: #449600;
     color: white;
@@ -47,22 +52,52 @@ li:hover {
     background-color: #2E6600;
 }
 
-.mainDiv {
-    width: 70%;
-    margin: 0 auto;
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .mainDiv {
+        width: 100%;
+    }
+
+    .topnav li:not(:first-child) {
+        display: none;
+    }
+
+    .topnav li.icon {
+        float: right;
+        display: block;
+    }
+
+    .topnav.responsive {
+        position: relative;
+    }
+
+        .topnav.responsive li.icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .topnav.responsive li {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+}
+
+#designLabel {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    padding: 8px;
 }
 
 .mainContent {
     background-color: #565353;
     padding: 10px;
     height:500px;
-    text-align: center;
-}
-
-.banner {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 100%;
 }
 
 .footer {
@@ -74,4 +109,12 @@ li:hover {
 .styleIcon {
     height: 20px;
     vertical-align: middle;
+}
+
+.centerAlignDiv {
+    text-align: center;
+}
+
+#canvasContainer {
+    margin-top: 20px;
 }

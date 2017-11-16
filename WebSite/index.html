@@ -4,6 +4,7 @@
     <title>WebTecPage</title>
     <meta name="author" content="Lukas Brun">
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="Css/main.css" rel="stylesheet" />
     <link href="Css/spaceStyle.css" rel="stylesheet" id="style" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
@@ -14,19 +15,20 @@
 <body onload="getStyle()">
     <div class="mainDiv">
         <header>
-            <img class="banner" id="banner"/>
+            <img class="banner"/>
         </header>
-        <ul>
+        <ul class="topnav" id="myTopnav">
             <li id="home" class="clickable">Home</li>
             <li id="canvas" class="clickable">Canvas</li>
             <li id="form" class="clickable">Form</li>
+            <li href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</li>
         </ul>
         <div class="mainContent" id="mainContent"></div>
         <footer class="footer">
                 <label id="designLabel">Designs:</label>
-                <img src="Images\astronautIcon.png" class="styleIcon" onclick="changeStyle('spaceStyle')" />
-                <img src="Images\waterIcon.png" class="styleIcon" onclick="changeStyle('earthStyle')" />
-            <p>Copyright &copy; 2017 All rights reserved</p>
+                <img src="Images/astronautIcon.png" class="styleIcon" alt="astronaut icon" onclick="changeStyle('spaceStyle')" />
+                <img src="Images/waterIcon.png" class="styleIcon" alt="water icon" onclick="changeStyle('earthStyle')" />
+            <p>Copyright &copy; by Lukas 2017 All rights reserved</p>
         </footer>
     </div>
 </body>

@@ -1,30 +1,21 @@
 $(document).ready(function () {
-    //"use strict";
     changeContent(null);
-    //handleMobileMenu();
 
     $("#home").click(changeContent);
     $("#canvas").click(changeContent);
     $("#form").click(changeContent);
 
-    //$("#mobile-nav-title").click(toggleMobileMenu);
-
-    //$(window).resize(handleMobileMenu);
-
     $("#styleSwitch").click(changeStyle);
 });
 
 //Navigation
-
 function changeContent(e) {
-    //"use strict";
     var name = 'home'; // set to 'home', 'canvas', ... for debugging.
     if (e !== null) {
         changeActiveNav(e);
         name = $(e.target).attr('id');
     }
     $('#mainContent').load(name + ".html");
-    //toggleMobileMenu();
 }
 
 function changeActiveNav(e) {
@@ -35,6 +26,15 @@ function changeActiveNav(e) {
     $(e.target).addClass('active');
 }
 
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
 
 //StyleSwitch
 function changeStyle(sheet) {
@@ -43,7 +43,6 @@ function changeStyle(sheet) {
 }
 
 //Cookie
-
 function getStyle() {
     var style = getCookie("style");
     if (style == null) {
