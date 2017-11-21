@@ -11,40 +11,43 @@
                 <label class="formLabel">Last Name</label>
                 <input class="formInput" id="lastName" type="text" />
             </div>
-            <button type="submit" id="formButton">Senden</button>
             <div id="contactResponse"></div>
+            <button type="submit" id="formButton">Senden</button>
         </div>
     </form> 
 </div>
 <script>
-     $("#contactForm").submit(function(event)
-     {
-         /* stop form from submitting normally */
-         event.preventDefault();
+    $("#contactForm").submit(function (event) {
+        /* stop form from submitting normally */
+        event.preventDefault();
 
-         /* get some values from elements on the page: */
-         var $form = $( this ),
-             $submit = $form.find( 'button[type="submit"]' ),
-             lastName_value = $form.find( 'input[name="lastName"]' ).val(),
-             firstName_value = $form.find( 'input[name="firstName"]' ).val(),
-             url = $form.attr('action');
+        /* get some values from elements on the page: */
+        var $form = $(this),
+            $submit = $form.find('button[type="submit"]'),
+            url = $form.attr('action'),
+            lastName = document.forms["contactForm"]["lastName"],
+            firstName = document.forms["contactForm"]["firstName"];
 
-         /* Send the data using post */
-         var posting = $.post( url, {
-                           lastName: lastName_value,
-                           firstName: firstName_value
-                       });
+        if (lastName.value == "" || lastName.value == null || firstName.value == "" || firstName.value == null) {
+            $("#contactResponse").html("Name and first name must be filled out");
+        }
+        else {
+            /* Send the data using post */
+            var posting = $.post(url, { lastName: lastName.value, firstName: firstName.value });
 
-         posting.done(function( data )
-         {
-             /* Put the results in a div */
-             $( "#contactResponse" ).html(data);
+            posting.done(function (data) {
+                /* Put the results in a div */
+                $("#contactResponse").html(data);
 
-             /* Change the button text. */
-             $submit.text('Sent, Thank you');
+                /* Change the button text. */
+                $submit.text('Sent, Thank you');
 
-             /* Disable the button. */
-             $submit.attr("disabled", true);
-         });
+                /* Disable the button */
+                $submit.attr("disabled", true);
+
+                /* clear all input fields */
+                document.forms["contactForm"].reset();
+            })
+        }
     });
 </script>

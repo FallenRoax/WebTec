@@ -7,6 +7,6 @@ $lastName = htmlspecialchars($_POST["lastName"]);
 error_log("Received message: {FirstName=" . $firstName . ", LastName=" . $lastName ."}");
 
 // send nice text back
-echo "Danke" . $firstName . ". Deine Daten wurden weitergeleitet :)";
+echo "Danke " . $firstName . ". Deine Daten wurden weitergeleitet :)";
 
 ?>
